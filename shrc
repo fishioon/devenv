@@ -21,17 +21,6 @@ alias gst='git status'
 
 # function
 
-rsrio() {
-	dst=$1
-	[ -z "$dst" ] && dst=dev1
-	rsync --rsh=ssh -avz --exclude='.git' ~/go/src/git.oa.com/rio-ansible $dst:/data/ifish/
-}
-
-rscode() {
-	dst=$1
-	[ -z "$dst" ] && dst=rio-ansible
-	rsync --rsh=ssh -avz --exclude='.git' ~/go/src/git.oa.com/$dst dev1:/data/ifish/git.oa.com/
-}
 
 fzf-down() {
 	fzf --height 50% "$@" --border
