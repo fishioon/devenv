@@ -1,0 +1,41 @@
+{
+	"yank.highlight.enable": false,
+	"list.maxHeight": 18,
+	"list.autoResize": false,
+	"list.normalMappings": {
+		"t": "action:tabe",
+		"v": "action:vsplit",
+		"s": "action:split",
+		"d": "expr:GetDeleteAction"
+	},
+	"list.insertMappings": {
+		"<C-t>": "action:tabe",
+		"<C-v>": "action:vsplit",
+		"<C-w>": "command:wincmd k"
+	},
+	"languageserver": {
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": [
+				"go.mod"
+			],
+			"filetypes": [
+				"go"
+			]
+		},
+		"clangd": {
+			"command": "clangd",
+			"rootPatterns": [
+				"compile_flags.txt",
+				"compile_commands.json",
+				".git/"
+			],
+			"filetypes": [
+				"c",
+				"cpp",
+				"objc",
+				"objcpp"
+			]
+		}
+	}
+}

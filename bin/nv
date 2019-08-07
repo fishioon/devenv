@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+// npm install -g neovim
+// export NODE_PATH=$(npm root --quiet -g)
+const attach = require('neovim').attach;
+
+(async function () {
+	const nvim = await attach({socket: process.env.NVIM_LISTEN_ADDRESS})
+	let path = process.argv[2]
+	if (path && !path.startsWith(process.cwd())) {
+		path = process.cwd() + '/' + path
+	}
+	await nvim.command(path ? 'tabedit ' + path : 'tabnext')
+	process.exit()
+})()
