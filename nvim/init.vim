@@ -30,6 +30,13 @@ nmap <silent> <space>f :call CocAction('jumpReferences')<CR>
 nmap <silent> <space>r :call CocActionAsync('rename')<CR>
 nmap <silent> <space>k :call CocAction('format')<CR>
 nmap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 nmap <space>/ :CocList grep<space>
 nmap <silent> <space>g :exe 'CocList grep '.expand('<cword>')<CR>
