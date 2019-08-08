@@ -6,16 +6,15 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 set background=dark
 set number
-set ignorecase
 set cmdwinheight=18
-
-autocmd FileType html,javascript,proto,yaml,yml,pac,sh,zsh setlocal ts=2 sts=2 sw=2
-command! Goimports silent! exe '!goimports -w %'
+set smartcase
+set ignorecase
 
 nmap <silent> [b :bprevious<CR>
 nmap <silent> ]b :bnext<CR>
 nmap <silent> <C-l> :nohlsearch<CR>
 nmap <silent> <space>d :lcd %:p:h<CR>
+"autocmd FileType html,javascript,proto,yaml,yml,pac,sh,zsh setlocal ts=2 sts=2 sw=2
 
 "========= coc
 let g:coc_snippet_next = '<c-j>'
@@ -31,12 +30,13 @@ nmap <silent> <space>r :call CocActionAsync('rename')<CR>
 nmap <silent> <space>k :call CocAction('format')<CR>
 nmap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
 endfunction
+command! OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 nmap <space>/ :CocList grep<space>
 nmap <silent> <space>g :exe 'CocList grep '.expand('<cword>')<CR>
