@@ -17,8 +17,6 @@ nmap <silent> <space>d :lcd %:p:h<CR>
 "autocmd FileType html,javascript,proto,yaml,yml,pac,sh,zsh setlocal ts=2 sts=2 sw=2
 
 "========= coc
-let g:coc_snippet_next = '<c-j>'
-let g:coc_snippet_prev = '<c-k>'
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
@@ -28,14 +26,7 @@ nmap <silent> <space>j :call CocAction('jumpDefinition')<CR>
 nmap <silent> <space>f :call CocAction('jumpReferences')<CR>
 nmap <silent> <space>r :call CocActionAsync('rename')<CR>
 nmap <silent> <space>k :call CocAction('format')<CR>
-nmap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-	if (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	else
-		call CocAction('doHover')
-	endif
-endfunction
+nmap <silent> <space>h :call CocAction('doHover')<CR>
 command! OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 nmap <space>/ :CocList grep<space>
