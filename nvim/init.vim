@@ -10,29 +10,29 @@ set cmdwinheight=18
 set smartcase
 set ignorecase
 
-nmap <silent> [b :bprevious<CR>
-nmap <silent> ]b :bnext<CR>
-nmap <silent> <C-l> :nohlsearch<CR>
-nmap <silent> <space>d :lcd %:p:h<CR>
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> <C-l> :nohlsearch<CR>
+nnoremap <silent> <space>d :lcd %:p:h<CR>
 "autocmd FileType html,javascript,proto,yaml,yml,pac,sh,zsh setlocal ts=2 sts=2 sw=2
 
 "========= coc
-vmap <C-j> <Plug>(coc-snippets-select)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+vnoremap <C-j> <Plug>(coc-snippets-select)
+inoremap <C-j> <Plug>(coc-snippets-expand-jump)
 
-nmap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>
-nmap <silent> ]c :call CocActionAsync('diagnosticNext')<CR>
-nmap <silent> <space>j :call CocAction('jumpDefinition')<CR>
-nmap <silent> <space>f :call CocAction('jumpReferences')<CR>
-nmap <silent> <space>r :call CocActionAsync('rename')<CR>
-nmap <silent> <space>k :call CocAction('format')<CR>
-nmap <silent> <space>h :call CocAction('doHover')<CR>
+nnoremap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>
+nnoremap <silent> ]c :call CocActionAsync('diagnosticNext')<CR>
+nnoremap <silent> <space>j :call CocAction('jumpDefinition')<CR>
+nnoremap <silent> <space>f :call CocAction('jumpReferences')<CR>
+nnoremap <silent> <space>r :call CocActionAsync('rename')<CR>
+nnoremap <silent> <space>k :call CocAction('format')<CR>
+nnoremap <silent> <space>h :call CocAction('doHover')<CR>
 command! OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-nmap <space>/ :CocList grep<space>
-nmap <silent> <space>g :exe 'CocList grep '.expand('<cword>')<CR>
-nmap <silent> <space>a :CocList diagnostics<CR>
-nmap <silent> <space>p :CocList files<CR>
-nmap <silent> <space>b :CocList buffers<CR>
-nmap <silent> <space>w :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
-nmap <silent> <space>y :CocList -A --normal yank<cr>
+nnoremap <space>/ :CocList grep<space>
+nnoremap <silent> <space>g :exe 'CocList grep '.expand('<cword>')<CR>
+nnoremap <silent> <space>a :CocList diagnostics<CR>
+nnoremap <silent> <space>p :CocList files<CR>
+nnoremap <silent> <space>b :CocList buffers<CR>
+nnoremap <silent> <space>w :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
+nnoremap <silent> <space>y :CocList -A --normal yank<cr>
