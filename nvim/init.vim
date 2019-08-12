@@ -17,16 +17,16 @@ nnoremap <silent> <space>d :lcd %:p:h<CR>
 "autocmd FileType html,javascript,proto,yaml,yml,pac,sh,zsh setlocal ts=2 sts=2 sw=2
 
 "========= coc
-vnoremap <C-j> <Plug>(coc-snippets-select)
-inoremap <C-j> <Plug>(coc-snippets-expand-jump)
+vmap <C-j> <Plug>(coc-snippets-select)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-nnoremap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>
-nnoremap <silent> ]c :call CocActionAsync('diagnosticNext')<CR>
-nnoremap <silent> <space>j :call CocAction('jumpDefinition')<CR>
-nnoremap <silent> <space>f :call CocAction('jumpReferences')<CR>
-nnoremap <silent> <space>r :call CocActionAsync('rename')<CR>
-nnoremap <silent> <space>k :call CocAction('format')<CR>
-nnoremap <silent> <space>h :call CocAction('doHover')<CR>
+nmap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>
+nmap <silent> ]c :call CocActionAsync('diagnosticNext')<CR>
+nmap <silent> <space>j :call CocAction('jumpDefinition')<CR>
+nmap <silent> <space>f :call CocAction('jumpReferences')<CR>
+nmap <silent> <space>r :call CocActionAsync('rename')<CR>
+nmap <silent> <space>k :call CocAction('format')<CR>
+nmap <silent> <space>h :call CocAction('doHover')<CR>
 command! OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 nnoremap <space>/ :CocList grep<space>
