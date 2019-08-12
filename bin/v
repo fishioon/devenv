@@ -2,7 +2,7 @@
 
 // npm install -g neovim
 // export NODE_PATH=$(npm root --quiet -g)
-const attach = require('neovim').attach;
+const attach = require('neovim').attach
 const path = require('path');
 
 (async function () {
