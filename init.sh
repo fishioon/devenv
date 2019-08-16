@@ -16,6 +16,5 @@ exit_msg() {
 [[ -z "$ZDOTDIR" ]] && exit_msg "You need add [$ZDOTDIR] env first"
 addLine "$ZDOTDIR/.zshrc" "export DEVENV_HOME=\"$DEVENV_HOME\""
 addLine "$ZDOTDIR/.zshrc" 'source $DEVENV_HOME/shrc'
-[[ -f "$DEVENV_HOME/workrc" ]] && addLine "$ZDOTDIR/.zshrc" 'source $DEVENV_HOME/workrc'
 
 echo "🎉 🎉 Good luck"
