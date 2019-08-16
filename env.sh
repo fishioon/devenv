@@ -92,4 +92,3 @@ fi
 eval "$(jump shell --bind=z)"
 
 bindkey '^o' autosuggest-execute
-source $DEVENV_HOME/workrc
