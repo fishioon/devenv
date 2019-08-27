@@ -68,14 +68,14 @@ proxy() {
 		# proxy_value and no_proxy_value define at profile
 		assignProxy $proxy_value $no_proxy_value
 	else
-		unsetproxy
+		clrProxy
 	fi
 }
 
 rs() {
 	repo=$1
 	hostname=$2
-	[ -z "$dst" ] && hostname=dev
+	[ -z "$hostname" ] && hostname=dev
 	rsync --rsh=ssh -avz --exclude='.git' ~/code/work/$repo $hostname:/data/fish/
 }
 
