@@ -1,6 +1,6 @@
 #!/bin/sh
 
-addLine() {
+add_line() {
 	FILE=$1; LINE=$2
 	grep -qxF -- "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
 }
@@ -14,7 +14,7 @@ exit_msg() {
 [[ ! -L "$HOME/.config/nvim" ]] && ln -sf $DEVENV_HOME/nvim $HOME/.config/nvim
 
 [[ -z "$ZDOTDIR" ]] && exit_msg "You need add [$ZDOTDIR] env first"
-addLine "$ZDOTDIR/.zshrc" "export DEVENV_HOME=\"$DEVENV_HOME\""
-addLine "$ZDOTDIR/.zshrc" 'source $DEVENV_HOME/env.sh'
+add_line "$ZDOTDIR/.zshrc" "export DEVENV_HOME=\"$DEVENV_HOME\""
+add_line "$ZDOTDIR/.zshrc" 'source $DEVENV_HOME/env.sh'
 
 echo "🎉 🎉 Good luck"
