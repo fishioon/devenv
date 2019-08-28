@@ -4,7 +4,7 @@
 # source profile at first
 source $DEVENV_HOME/profile
 
-export PATH=$PATH:$HOME/go/bin:$DEVENV_HOME/bin
+export PATH=/usr/local/sbin:$HOME/go/bin:$DEVENV_HOME/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export EDITOR=nvim
