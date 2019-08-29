@@ -10,9 +10,6 @@ export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export EDITOR=nvim
 
 # alias
-alias vi='nvim'
-alias vim='nvim'
-
 alias ga='git add'
 alias gc='git commit -v'
 alias gcm='git checkout master'
@@ -24,12 +21,20 @@ alias gst='git status'
 
 # function
 
+v() {
+	if [[ -S "$NVIM_LISTEN_ADDRESS" ]]; then
+		nv "$@"
+	else
+		nvim "$@"
+	fi
+}
+
 is_in_git_repo() {
 	git rev-parse HEAD > /dev/null 2>&1
 }
 
 gitignore() {
-	if [ -f ".gitignore" ]; then 
+	if [[ -f ".gitignore" ]]; then 
 		echo ".gitignore already exists"
 	else
 		lang=${1:-Go}
