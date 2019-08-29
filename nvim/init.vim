@@ -1,8 +1,9 @@
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-"plug=$HOME/.local/share/nvim/site/pack/github/start; mkdir -p $plug; cd $plug
-"git clone https://github.com/neoclide/coc.nvim
-"git clone https://github.com/honza/vim-snippets
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
+call plug#end()
 
 set background=dark
 set number
