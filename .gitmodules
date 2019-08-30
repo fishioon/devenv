@@ -1,3 +1,6 @@
 [submodule "nvim/pack/plugin/start/coc.nvim"]
 	path = nvim/pack/plugin/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule "nvim/pack/plugin/start/vim-snippets"]
+	path = nvim/pack/plugin/start/vim-snippets
+	url = https://github.com/honza/vim-snippets.git

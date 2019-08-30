@@ -8,6 +8,7 @@ export PATH=/usr/local/sbin:$HOME/go/bin:$DEVENV_HOME/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export EDITOR=nvim
+export NODE_REPL_HISTORY=""
 
 # alias
 alias ga='git add'
