@@ -1,10 +1,5 @@
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'honza/vim-snippets'
-call plug#end()
-
 set background=dark
 set number
 set cmdwinheight=18
