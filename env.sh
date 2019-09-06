@@ -46,6 +46,13 @@ gitignore() {
 	fi
 }
 
+rs() {
+	repo=$1
+	hostname=$2
+	[ -z "$hostname" ] && hostname=dev
+	rsync --rsh=ssh -avz --exclude='.git' ~/code/work/$repo $hostname:/data/fish/
+}
+
 cpabs() {
 	name=`pwd`/$1
 	printf $name | pbcopy
@@ -81,13 +88,6 @@ proxy() {
 	else
 		clrProxy
 	fi
-}
-
-rs() {
-	repo=$1
-	hostname=$2
-	[ -z "$hostname" ] && hostname=dev
-	rsync --rsh=ssh -avz --exclude='.git' ~/code/work/$repo $hostname:/data/fish/
 }
 
 # proxy config
