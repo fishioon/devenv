@@ -21,6 +21,7 @@ alias gp='git push'
 alias gst='git status'
 
 alias sshconfig='v ~/.ssh/config'
+alias vi=nvim
 
 # function
 
