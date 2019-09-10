@@ -12,12 +12,12 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <C-l> :nohlsearch<CR>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
+
 "autocmd FileType html,javascript,proto,yaml,yml,pac,sh,zsh setlocal ts=2 sts=2 sw=2
 
 "========= coc
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
-
 nmap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>
 nmap <silent> ]c :call CocActionAsync('diagnosticNext')<CR>
 nmap <silent> <space>j :call CocAction('jumpDefinition')<CR>
