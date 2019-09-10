@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.mine		set filetype=mine
+au BufRead,BufNewFile *.vue		set filetype=html
