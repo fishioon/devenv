@@ -5,7 +5,6 @@ set number
 set cmdwinheight=18
 set smartcase
 set ignorecase
-set signcolumn=yes
 
 tnoremap <C-]> <C-\><C-n>
 nnoremap <silent> [b :bprevious<CR>

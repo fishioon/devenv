@@ -69,7 +69,7 @@ assignProxy(){
 	for envar in $NO_PROXY_ENV; do
 		export $envar=$2
 	done
-	sed -i.bak -e '/^ProxyCommand/ s/^#*/#/' ~/.ssh/config
+	sed -i.bak -e '/^#ProxyCommand/ s/^#//' ~/.ssh/config
 }
 
 clrProxy(){
@@ -77,7 +77,7 @@ clrProxy(){
 	do
 		unset $envar
 	done
-	sed -i.bak -e '/^#ProxyCommand/ s/^#//' ~/.ssh/config
+	sed -i.bak -e '/^ProxyCommand/ s/^#*/#/' ~/.ssh/config
 }
 
 ## proxy switch
