@@ -6,3 +6,9 @@
 	path = nvim/pack/plugin/start/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
 	branch = master
+[submodule "markdown-preview.nvim"]
+	path = nvim/pack/plugin/start/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "nvim/pack/plugin/start/markdown-preview.nvim"]
+	path = nvim/pack/plugin/start/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim
