@@ -1,7 +1,9 @@
 # devenv
-sh init.sh
+## install
+sh install.sh
 
-## shell
+## action
+nvim
 oh-my-zsh
-fzf
 zsh-autosuggests
+jump

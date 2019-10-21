@@ -101,6 +101,8 @@ else
 	clrProxy
 fi
 
-## go get -u github.com/gsamokovarov/jump 
+## jump "go get -u github.com/gsamokovarov/jump 
 eval "$(jump shell --bind=z)"
 
+## fzf
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
