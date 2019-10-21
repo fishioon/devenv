@@ -1,3 +1,4 @@
+export LANG=en_US.UTF-8
 export ZSH=$ZDOTDIR/oh-my-zsh
 export PATH=$HOME/go/bin:$DEVENV_HOME/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
@@ -10,6 +11,8 @@ ZSH_THEME="robbyrussell"
 plugins=(docker)
 
 source $ZSH/oh-my-zsh.sh
+source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^o' autosuggest-execute
 
 alias ga='git add'
 alias gc='git commit -v'
@@ -101,4 +104,3 @@ fi
 ## go get -u github.com/gsamokovarov/jump 
 eval "$(jump shell --bind=z)"
 
-bindkey '^o' autosuggest-execute
