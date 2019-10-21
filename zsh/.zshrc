@@ -1,16 +1,16 @@
-# export
-# $DEVENV_HOME: init.sh define and add to .zshrc
-
-# source profile at first
-source $DEVENV_HOME/profile
-
-export PATH=/usr/local/sbin:$HOME/go/bin:$DEVENV_HOME/bin:$PATH
+export ZSH=$ZDOTDIR/oh-my-zsh
+export PATH=$HOME/go/bin:$DEVENV_HOME/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export EDITOR=nvim
 export NODE_REPL_HISTORY=""
 
-# alias
+ZSH_THEME="robbyrussell"
+
+plugins=(docker)
+
+source $ZSH/oh-my-zsh.sh
+
 alias ga='git add'
 alias gc='git commit -v'
 alias gcm='git checkout master'
@@ -24,7 +24,6 @@ alias sshconfig='v ~/.ssh/config'
 alias vi=nvim
 
 # function
-
 v() {
 	if [[ -S "$NVIM_LISTEN_ADDRESS" ]]; then
 		nv "$@"
@@ -69,7 +68,7 @@ assignProxy(){
 	for envar in $NO_PROXY_ENV; do
 		export $envar=$2
 	done
-	sed -i.bak -e '/^#ProxyCommand/ s/^#//' ~/.ssh/config
+	#sed -i.bak -e '/^#ProxyCommand/ s/^#//' ~/.ssh/config
 }
 
 clrProxy(){
@@ -77,7 +76,7 @@ clrProxy(){
 	do
 		unset $envar
 	done
-	sed -i.bak -e '/^ProxyCommand/ s/^#*/#/' ~/.ssh/config
+	#sed -i.bak -e '/^ProxyCommand/ s/^#*/#/' ~/.ssh/config
 }
 
 ## proxy switch
@@ -99,7 +98,7 @@ else
 	clrProxy
 fi
 
-## go get github.com/gsamokovarov/jump 
+## go get -u github.com/gsamokovarov/jump 
 eval "$(jump shell --bind=z)"
 
 bindkey '^o' autosuggest-execute
