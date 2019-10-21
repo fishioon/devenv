@@ -14,8 +14,10 @@ exit_msg() {
 [[ -z "$ZDOTDIR" ]] && export ZDOTDIR="$XDG_CONFIG_HOME/zsh"; add_line "$HOME/.zshenv" "export ZDOTDIR=\"$ZDOTDIR\""
 
 [[ ! -d "$XDG_CONFIG_HOME" ]] && mkdir -p $HOME/.config
+
 [[ ! -L "$ZDOTDIR" ]] && ln -sf $DEVENV_HOME/zsh $XDG_CONFIG_HOME/zsh
 [[ ! -L "$XDG_CONFIG_HOME/nvim" ]] && ln -sf $DEVENV_HOME/nvim $XDG_CONFIG_HOME/nvim
+[[ ! -L "$XDG_CONFIG_HOME/git" ]] && ln -sf $DEVENV_HOME/git $XDG_CONFIG_HOME/git
 
 ### add
 command -v fzf || (brew install fzf && $(brew --prefix)/opt/fzf/install --xdg --no-bash --no-fish --no-update-rc --key-bindings --completion)
