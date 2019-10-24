@@ -1,3 +1,6 @@
+[includeIf "gitdir:~/code/work/"]
+	path = ~/code/work/.gitconfig-work
+
 [user]
 	name = ifish
 	email = fishioon@live.com
