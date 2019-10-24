@@ -1,5 +1,3 @@
-let g:python3_host_prog = '/usr/local/bin/python3'
-
 set background=dark
 set number
 set cmdwinheight=18
@@ -16,6 +14,7 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType json setlocal ts=4 sts=4 sw=4
 
 "========= coc
+let g:coc_global_extensions = ['coc-eslint','coc-snippets','coc-lists','coc-yank','coc-git']
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 nmap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>

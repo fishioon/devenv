@@ -6,6 +6,8 @@ export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export EDITOR=nvim
 export NODE_REPL_HISTORY=""
 
+source $DEVENV_HOME/profile
+
 ZSH_THEME="robbyrussell"
 
 plugins=(docker)
@@ -17,7 +19,7 @@ bindkey '^o' autosuggest-execute
 alias ga='git add'
 alias gc='git commit -v'
 alias gcm='git checkout master'
-alias gcd='git checkout develop'
+alias gcb='git checkout -b'
 alias gco='git checkout'
 alias gd='git diff'
 alias gp='git push'
