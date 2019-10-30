@@ -1,8 +1,9 @@
 # devenv
 ## install
 ```zsh
-git clone --recursive git@github.com:fishioon/devenv
-sh install.sh
+git clone --recursive https://github.com/fishioon/devenv.git
+chsh -s /bin/zsh
+bash install.sh
 # restart terminal
 ```
 
