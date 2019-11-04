@@ -1,6 +1,7 @@
+## DEVENV ZDOTDIR XDG_CONFIG_HOME define at ~/.zshenv
 export LANG=en_US.UTF-8
+export PATH=$HOME/go/bin:$DEVENV/bin:$PATH
 export ZSH=$ZDOTDIR/oh-my-zsh
-export PATH=$HOME/go/bin:$DEVENV_HOME/bin:$PATH
 export EDITOR=nvim
 
 export NODE_PATH=/usr/local/lib/node_modules
@@ -9,12 +10,10 @@ export REDISCLI_HISTFILE=/dev/null
 export NODE_REPL_HISTORY=""
 
 # You can add sensitive data to profile which git ignored
-source $DEVENV_HOME/profile
+[[ -f "$DEVENV/profile" ]] && source $DEVENV/profile
 
 ZSH_THEME="robbyrussell"
-
 plugins=(docker)
-
 source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^o' autosuggest-execute
@@ -28,9 +27,8 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gp='git push'
 alias gst='git status'
-
-alias sshconfig='v ~/.ssh/config'
 alias vi=nvim
+alias sshconfig='v ~/.ssh/config'
 
 # function
 v() {
@@ -68,7 +66,7 @@ cpabs() {
 }
 
 PROXY_ENV=(http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY)
-assignProxy(){
+setproxy(){
 	for envar in $PROXY_ENV; do
 		export $envar=$1
 	done
@@ -77,45 +75,49 @@ assignProxy(){
 	for envar in $NO_PROXY_ENV; do
 		export $envar=$2
 	done
-	networksetup -setwebproxy "Wi-fi" $proxy_host $proxy_port
-	networksetup -setsecurewebproxy "Wi-fi" $proxy_host $proxy_port
-	networksetup -setautoproxyurl "Wi-fi" $pac_url
 	#sed -i.bak -e '/^#ProxyCommand/ s/^#//' ~/.ssh/config
+	if [[ "$OSTYPE" = darwin* ]]; then
+		networksetup -setwebproxy "Wi-fi" $proxy_host $proxy_port
+		networksetup -setsecurewebproxy "Wi-fi" $proxy_host $proxy_port
+		networksetup -setautoproxyurl "Wi-fi" $pac_url
+	fi
 }
 
-clrProxy(){
+unproxy(){
 	for envar in $PROXY_ENV
 	do
 		unset $envar
 	done
-	networksetup -setsecurewebproxystate "Wi-fi" off
-	networksetup -setwebproxy "Wi-fi" off
-	networksetup -setautoproxystate "Wi-fi" off
 	#sed -i.bak -e '/^ProxyCommand/ s/^#*/#/' ~/.ssh/config
+	if [[ "$OSTYPE" = darwin* ]]; then
+		networksetup -setsecurewebproxystate "Wi-fi" off
+		networksetup -setwebproxystate "Wi-fi" off
+		networksetup -setautoproxystate "Wi-fi" off
+	fi
 }
 
 ## proxy switch
 proxy() {
 	if [[ -z "$HTTP_PROXY" ]]; then
 		# proxy_value and no_proxy_value define at profile
-		assignProxy $proxy_value $no_proxy_value
+		setproxy $proxy_value $no_proxy_value
 	else
-		clrProxy
+		unproxy
 	fi
 	echo $HTTP_PROXY
 }
 
-# proxy config
-# work_wifi,proxy_value,no_proxy_value define at 'profile' file
-ssid=`networksetup -getairportnetwork en0 | awk '{print $4}'`
-if [[ $ssid == $work_wifi ]]; then
-	[[ -z "$HTTP_PROXY" ]] && assignProxy $proxy_value $no_proxy_value
-else
-	[[ ! -z "$HTTP_PROXY" ]] && clrProxy
-fi
-
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
 ## jump "go get -u github.com/gsamokovarov/jump 
 eval "$(jump shell --bind=z)"
 
-## fzf
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
+# proxy config
+# work_wifi,proxy_value,no_proxy_value define at 'profile' file
+if [[ "$OSTYPE" = darwin* ]]; then
+	ssid=`networksetup -getairportnetwork en0 | awk '{print $4}'`
+	if [[ $ssid == $work_wifi ]]; then
+		[[ -z "$HTTP_PROXY" ]] && setproxy $proxy_value $no_proxy_value
+	else
+		[[ ! -z "$HTTP_PROXY" ]] && unproxy
+	fi
+fi
