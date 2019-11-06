@@ -59,6 +59,11 @@ rs() {
 	rsync --rsh=ssh -avz --exclude='.git' ~/code/work/$repo $hostname:/data/fish/
 }
 
+screenconfig() {
+	hostname=$1
+	scp $DEVENV/screenrc $hostname:~/.screenrc
+}
+
 cpabs() {
 	name=`pwd`/$1
 	printf $name | pbcopy

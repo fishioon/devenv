@@ -1,24 +1,18 @@
 [submodule "nvim/pack/plugin/start/coc.nvim"]
 	path = nvim/pack/plugin/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
-	branch = release
 [submodule "nvim/pack/plugin/start/vim-snippets"]
 	path = nvim/pack/plugin/start/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-	branch = master
 [submodule "markdown-preview.nvim"]
 	path = nvim/pack/plugin/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
-	branch = master
 [submodule "nvim/pack/plugin/start/markdown-preview.nvim"]
 	path = nvim/pack/plugin/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
-	branch = master
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-	branch = master
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-	branch = master
