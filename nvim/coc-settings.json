@@ -17,8 +17,7 @@
 		"golang": {
 			"command": "gopls",
 			"rootPatterns": [
-				"go.mod",
-				".git"
+				"go.mod"
 			],
 			"filetypes": [
 				"go"

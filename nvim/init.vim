@@ -31,5 +31,26 @@ nnoremap <silent> <space>a :CocList diagnostics<CR>
 nnoremap <silent> <space>p :CocList files<CR>
 nnoremap <silent> <space>b :CocList buffers<CR>
 nnoremap <silent> <space>y :CocList -A --normal yank<cr>
-nnoremap <silent> <space>g :exe 'CocList grep '.expand('<cword>')<CR>
+nnoremap <silent> <space>g :exe 'CocList --auto-preview grep '.expand('<cword>')<CR>
 nnoremap <silent> <space>w :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
+
+"autocmd Filetype rust,python,go,c,cpp setl omnifunc=lsp#omnifunc
+"nnoremap <silent> <space>j :call lsp#text_document_definition()<CR>
+"nnoremap <silent> <space>h  :call lsp#text_document_hover()<CR>
+
+"===== lightline
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'paste' ],
+      \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'cocstatus': 'coc#status',
+      \   'currentfunction': 'CocCurrentFunction'
+      \ },
+      \ }
