@@ -19,3 +19,6 @@
 [submodule "nvim/pack/plugin/start/lightline.vim"]
 	path = nvim/pack/plugin/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
+[submodule "nvim/pack/plugin/start/nvim-lsp"]
+	path = nvim/pack/plugin/start/nvim-lsp
+	url = git@github.com:neovim/nvim-lsp.git
