@@ -13,12 +13,6 @@
 [submodule "markdown-preview.nvim"]
 	path = nvim/pack/plugin/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
-[submodule "nvim/pack/plugin/start/markdown-preview.nvim"]
-	path = nvim/pack/plugin/start/markdown-preview.nvim
-	url = https://github.com/iamcco/markdown-preview.nvim
 [submodule "nvim/pack/plugin/start/lightline.vim"]
 	path = nvim/pack/plugin/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
-[submodule "nvim/pack/plugin/start/nvim-lsp"]
-	path = nvim/pack/plugin/start/nvim-lsp
-	url = git@github.com:neovim/nvim-lsp.git
