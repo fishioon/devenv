@@ -22,9 +22,9 @@ nnoremap <silent> ]c :call CocActionAsync('diagnosticNext')<CR>
 nnoremap <silent> <space>j :call CocAction('jumpDefinition')<CR>
 nnoremap <silent> <space>f :call CocAction('jumpReferences')<CR>
 nnoremap <silent> <space>k :call CocAction('format')<CR>
+nnoremap <silent> <space>h :call CocAction('doHover')<CR>
 nnoremap <silent> <space>ei :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 nnoremap <silent> <space>er :call CocActionAsync('rename')<CR>
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 nnoremap <space>/ :CocList --auto-preview grep<space>
 nnoremap <silent> <space>a :CocList diagnostics<CR>
@@ -33,27 +33,3 @@ nnoremap <silent> <space>l :CocList files<CR>
 nnoremap <silent> <space>y :CocList -A --normal yank<cr>
 nnoremap <silent> <space>g :exe 'CocList --auto-preview grep '.expand('<cword>')<CR>
 nnoremap <silent> <space>w :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'paste' ],
-      \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'cocstatus': 'coc#status',
-      \   'currentfunction': 'CocCurrentFunction'
-      \ },
-      \ }
