@@ -9,13 +9,7 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <C-l> :nohlsearch<CR>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
-
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-"autocmd FileType json setlocal ts=4 sts=4 sw=4
-
-lua << EOF
-    require'nvim_lsp'.gopls.setup{}
-EOF
 
 "========= coc
 let g:coc_global_extensions = ['coc-snippets','coc-lists','coc-yank','coc-git', 'coc-json', 'coc-tsserver']
