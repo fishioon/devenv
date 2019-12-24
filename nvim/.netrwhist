@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/fish/code/work/rio/install/pkg/rio/smartgate/init/src/accessgate'
+let g:netrw_dirhist_9='/Users/fish/code/work/rio-ansible/pkg/smartgate/init/src/accessgate'
+let g:netrw_dirhist_8='/Users/fish/code/work/rio-ansible/pkg/smartgate/init/src'
+let g:netrw_dirhist_7='/Users/fish/code/work/rio/install/pkg/rio/smartgate/init/src/accessgate'
+let g:netrw_dirhist_6='/Users/fish/code/work/rio/install/pkg/rio/smartgate/init/src'
+let g:netrw_dirhist_5='/Users/fish/code/work/rio-ansible/pkg/smartgate/init/src'
+let g:netrw_dirhist_4='/Users/fish/code/work/rio-ansible/pkg/smartgate/init'
+let g:netrw_dirhist_3='/Users/fish/code/work/rio/install/pkg/rio/smartgate/init/src'
+let g:netrw_dirhist_2='/Users/fish/code/work/rio-ansible/pkg/smartgate/init'
+let g:netrw_dirhist_1='/Users/fish/code/work/rio/install/pkg/rio/smartgate/init'

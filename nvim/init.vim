@@ -13,6 +13,10 @@ nnoremap <silent> <space>d :lcd %:p:h<CR>
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 "autocmd FileType json setlocal ts=4 sts=4 sw=4
 
+lua << EOF
+    require'nvim_lsp'.gopls.setup{}
+EOF
+
 "========= coc
 let g:coc_global_extensions = ['coc-snippets','coc-lists','coc-yank','coc-git', 'coc-json', 'coc-tsserver']
 vmap <C-j> <Plug>(coc-snippets-select)
@@ -23,7 +27,7 @@ nnoremap <silent> <space>j :call CocAction('jumpDefinition')<CR>
 nnoremap <silent> <space>f :call CocAction('jumpReferences')<CR>
 nnoremap <silent> <space>k :call CocAction('format')<CR>
 nnoremap <silent> <space>h :call CocAction('doHover')<CR>
-nnoremap <silent> <space>ei :call CocActionAsync('runCommand', 'editor.action.organizeImport')
+nnoremap <silent> <space>ei :call CocActionAsync('runCommand', 'editor.action.organizeImport')<CR>
 nnoremap <silent> <space>er :call CocActionAsync('rename')<CR>
 
 nnoremap <space>/ :CocList --auto-preview grep<space>
