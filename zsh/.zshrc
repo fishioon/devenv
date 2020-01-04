@@ -123,6 +123,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
 	if [[ $ssid == $work_wifi ]]; then
 		[[ -z "$HTTP_PROXY" ]] && setproxy $proxy_value $no_proxy_value
 	else
-		[[ ! -z "$HTTP_PROXY" ]] && unproxy
+		[[ -z "$HTTP_PROXY" ]] || unproxy
 	fi
 fi
