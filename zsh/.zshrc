@@ -54,8 +54,7 @@ gitignore() {
 
 rs() {
 	repo=$1
-	hostname=$2
-	[ -z "$hostname" ] && hostname=dev
+	hostname=${2:-dev}
 	rsync --rsh=ssh -avz --exclude='.git' ~/code/work/$repo $hostname:/data/fish/
 }
 
@@ -99,6 +98,13 @@ unproxy(){
 		networksetup -setwebproxystate "Wi-fi" off
 		networksetup -setautoproxystate "Wi-fi" off
 	fi
+}
+
+http() {
+	host=${1:-'127.0.0.1:9981'}
+	dir=${2:-$PWD}
+	echo 'http://'$host $dir
+	goexec 'http.ListenAndServe(`'$host'`, http.FileServer(http.Dir(`'$dir'`)))'
 }
 
 ## proxy switch
