@@ -4,7 +4,7 @@ set cmdwinheight=18
 set smartcase
 set ignorecase
 
-tnoremap <C-[> <C-\><C-n>
+"tnoremap <C-[> <C-\><C-n>
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
 tnoremap <A-k> <C-\><C-N><C-w>k
