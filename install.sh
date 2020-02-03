@@ -8,6 +8,7 @@ zshenv_file=$HOME/.zshenv
 [ -z "$DEVENV" ] && export DEVENV=$PWD; add_line $zshenv_file "export DEVENV=\"$DEVENV\""
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"; add_line $zshenv_file "export XDG_CONFIG_HOME=\"$XDG_CONFIG_HOME\""
 [ -z "$ZDOTDIR" ] && export ZDOTDIR="$XDG_CONFIG_HOME/zsh"; add_line $zshenv_file "export ZDOTDIR=\"$ZDOTDIR\""
+add_line $zshenv_file "export PATH=\$HOME/go/bin:\$DEVENV/bin:/usr/local/opt/llvm/bin:\$PATH"
 
 [ ! -d "$XDG_CONFIG_HOME" ] && mkdir -p $HOME/.config
 

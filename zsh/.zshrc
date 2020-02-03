@@ -1,6 +1,5 @@
-## DEVENV ZDOTDIR XDG_CONFIG_HOME define at ~/.zshenv
+## PATH DEVENV ZDOTDIR XDG_CONFIG_HOME define at ~/.zshenv
 export LANG=en_US.UTF-8
-export PATH=$HOME/go/bin:$DEVENV/bin:$PATH
 export ZSH=$ZDOTDIR/oh-my-zsh
 export EDITOR=nvim
 
