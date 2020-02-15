@@ -8,7 +8,7 @@ bash install.sh
 ```
 
 ## action
-nvim
-oh-my-zsh
-zsh-autosuggests
-jump
+nvim  
+oh-my-zsh  
+zsh-autosuggests  
+jump  
