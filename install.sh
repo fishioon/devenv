@@ -4,19 +4,24 @@ add_line() {
 	FILE=$1; LINE=$2
 	grep -qxF -- "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
 }
-zshenv_file=$HOME/.zshenv
-[ -z "$DEVENV" ] && export DEVENV=$PWD; add_line $zshenv_file "export DEVENV=\"$DEVENV\""
-[ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"; add_line $zshenv_file "export XDG_CONFIG_HOME=\"$XDG_CONFIG_HOME\""
-[ -z "$ZDOTDIR" ] && export ZDOTDIR="$XDG_CONFIG_HOME/zsh"; add_line $zshenv_file "export ZDOTDIR=\"$ZDOTDIR\""
-add_line $zshenv_file "export PATH=\$HOME/go/bin:\$DEVENV/bin:\$PATH"
 
-[ ! -d "$XDG_CONFIG_HOME" ] && mkdir -p $HOME/.config
+DEVENV=$PWD
+ZSHENV_FILE=$HOME/.zshenv
+XDG_CONFIG_HOME="$HOME/.config"
+[ ! -d "$XDG_CONFIG_HOME" ] && mkdir $XDG_CONFIG_HOME
+add_line $ZSHENV_FILE "export DEVENV=\"$DEVENV\""
+add_line $ZSHENV_FILE "export XDG_CONFIG_HOME=\"$XDG_CONFIG_HOME\""
+add_line $ZSHENV_FILE 'export PATH="$HOME/go/bin:$DEVENV/bin:$PATH"'
+add_line $ZSHENV_FILE 'export ZDOTDIR="$XDG_CONFIG_HOME/zsh"'
 
-[ ! -L "$ZDOTDIR" ] && ln -sf $DEVENV/zsh $XDG_CONFIG_HOME/zsh
-[ ! -L "$XDG_CONFIG_HOME/nvim" ] && ln -sf $DEVENV/nvim $XDG_CONFIG_HOME/nvim
-[ ! -L "$XDG_CONFIG_HOME/git" ] && ln -sf $DEVENV/git $XDG_CONFIG_HOME/git
+for i in zsh nvim git; do
+	[ ! -L "$XDG_CONFIG_HOME/$i" ] && ln -sf "$DEVENV/$i" "$XDG_CONFIG_HOME/$i"
+done
 
-### add
-command -v fzf || (brew install fzf && $(brew --prefix)/opt/fzf/install --xdg --no-bash --no-fish --no-update-rc --key-bindings --completion)
+## fzf
+# command -v fzf || (brew install fzf && $(brew --prefix)/opt/fzf/install --xdg --no-bash --no-fish --no-update-rc --key-bindings --completion)
+
+## jump
+go get -u github.com/gsamokovarov/jump
 
 echo "🎉 🎉 Good luck"

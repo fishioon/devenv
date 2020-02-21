@@ -28,6 +28,7 @@ alias gp='git push'
 alias gst='git status'
 alias vi=nvim
 alias sshconfig='v ~/.ssh/config'
+alias zshconfig='v ~/.config/zsh/.zshrc'
 
 # function
 v() {
@@ -36,10 +37,6 @@ v() {
 	else
 		nvim "$@"
 	fi
-}
-
-is_in_git_repo() {
-	git rev-parse HEAD > /dev/null 2>&1
 }
 
 gitignore() {
@@ -57,12 +54,7 @@ rs() {
 	rsync --rsh=ssh -avz --exclude='.git' ~/code/work/$repo $hostname:/data/fish/
 }
 
-screenconfig() {
-	hostname=$1
-	scp $DEVENV/screenrc $hostname:~/.screenrc
-}
-
-cpabs() {
+cpname() {
 	name=`pwd`/$1
 	printf $name | pbcopy
 	echo $name
@@ -99,13 +91,6 @@ unproxy(){
 	fi
 }
 
-http() {
-	host=${1:-'127.0.0.1:9981'}
-	dir=${2:-$PWD}
-	echo 'http://'$host $dir
-	goexec 'http.ListenAndServe(`'$host'`, http.FileServer(http.Dir(`'$dir'`)))'
-}
-
 ## proxy switch
 proxy() {
 	if [[ -z "$HTTP_PROXY" ]]; then
@@ -115,6 +100,13 @@ proxy() {
 		unproxy
 	fi
 	echo $HTTP_PROXY
+}
+
+http() {
+	host=${1:-'127.0.0.1:9981'}
+	dir=${2:-$PWD}
+	echo 'http://'$host $dir
+	goexec 'http.ListenAndServe(`'$host'`, http.FileServer(http.Dir(`'$dir'`)))'
 }
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
