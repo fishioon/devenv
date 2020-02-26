@@ -2,8 +2,8 @@
 
 // npm install -g neovim
 // export NODE_PATH=$(npm root --quiet -g)
-const attach = require('neovim').attach
-const path = require('path');
+import attach from 'neovim'
+import path from 'path'
 
 (async function () {
 	const nvim = await attach({socket: process.env.NVIM_LISTEN_ADDRESS})
