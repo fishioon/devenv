@@ -4,13 +4,13 @@
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "nvim/pack/plugin/start/coc.nvim"]
-	path = nvim/pack/plugin/start/coc.nvim
+[submodule "nvim/pack/github/start/coc.nvim"]
+	path = nvim/pack/github/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
 	branch = release
-[submodule "nvim/pack/plugin/start/vim-snippets"]
-	path = nvim/pack/plugin/start/vim-snippets
+[submodule "nvim/pack/github/start/vim-snippets"]
+	path = nvim/pack/github/start/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "nvim/pack/plugin/start/markdown-preview.nvim"]
-	path = nvim/pack/plugin/start/markdown-preview.nvim
+[submodule "nvim/pack/github/start/markdown-preview.nvim"]
+	path = nvim/pack/github/start/markdown-preview.nvim
 	url = git@github.com:iamcco/markdown-preview.nvim.git
