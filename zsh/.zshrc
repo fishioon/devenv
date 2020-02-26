@@ -1,12 +1,4 @@
-## PATH DEVENV ZDOTDIR XDG_CONFIG_HOME define at ~/.zshenv
-export LANG=en_US.UTF-8
 export ZSH=$ZDOTDIR/oh-my-zsh
-export EDITOR=nvim
-
-export NODE_PATH=/usr/local/lib/node_modules
-export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-export REDISCLI_HISTFILE=/dev/null
-export NODE_REPL_HISTORY=""
 
 # You can add sensitive data to profile which git ignored
 [[ -f "$DEVENV/profile" ]] && source $DEVENV/profile
