@@ -25,9 +25,13 @@ alias zshconfig='v ~/.config/zsh/.zshrc'
 # function
 v() {
 	if [[ -S "$NVIM_LISTEN_ADDRESS" ]]; then
-		nv "$@"
+		NVIM_NODE_LOG_LEVEL=info nv "$@"
 	else
-		nvim "$@"
+		if [[ -z "$1" ]]; then
+			nvim -c ":terminal"
+		else
+			nvim "$@"
+		fi
 	fi
 }
 
