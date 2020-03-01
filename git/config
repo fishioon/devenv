@@ -1,6 +1,7 @@
-[includeIf "gitdir:~/code/work/"]
-	path = ~/code/work/.gitconfig-work
-
 [user]
 	name = fish
 	email = fishioon@live.com
+
+[includeIf "gitdir:~/code/work/"]
+	path = ~/code/work/.gitconfig-work
+

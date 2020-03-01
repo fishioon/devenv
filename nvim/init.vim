@@ -6,7 +6,7 @@ set ignorecase
 
 nnoremap <silent> <C-l> :nohlsearch<CR>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
 command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
