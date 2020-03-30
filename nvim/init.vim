@@ -12,12 +12,13 @@ command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 
 "========= coc
-let g:coc_global_extensions = ['coc-snippets','coc-lists','coc-yank','coc-git', 'coc-json', 'coc-tsserver', 'coc-pairs']
+let g:coc_global_extensions = ['coc-snippets','coc-lists','coc-yank','coc-git', 'coc-json', 'coc-tsserver', 'coc-pairs', 'coc-java']
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 nnoremap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>
 nnoremap <silent> ]c :call CocActionAsync('diagnosticNext')<CR>
 nnoremap <silent> <space>j :call CocAction('jumpDefinition')<CR>
+nnoremap <silent> <space>i :call CocAction('jumpImplementation')<CR>
 nnoremap <silent> <space>f :call CocAction('jumpReferences')<CR>
 nnoremap <silent> <space>k :call CocAction('format')<CR>
 nnoremap <silent> <space>h :call CocAction('doHover')<CR>

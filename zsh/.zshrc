@@ -1,4 +1,5 @@
 export ZSH=$ZDOTDIR/oh-my-zsh
+source $ZDOTDIR/myfunc.zsh
 
 # You can add sensitive data to profile which git ignored
 [[ -f "$DEVENV/profile" ]] && source $DEVENV/profile
@@ -10,8 +11,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
 	fi
 fi
 export location=$location
-
-source $ZDOTDIR/myfunc.zsh
 
 ZSH_THEME="robbyrussell"
 plugins=(docker)

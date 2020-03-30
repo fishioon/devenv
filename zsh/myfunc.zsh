@@ -40,20 +40,17 @@ setproxy(){
 		export $envar="http://$proxy_host:$proxy_port"
 	done
 
-	#sed -i.bak -e '/^#ProxyCommand/ s/^#//' ~/.ssh/config
 	if [[ "$OSTYPE" = darwin* ]]; then
 		networksetup -setwebproxy "Wi-fi" $proxy_host $proxy_port
 		networksetup -setsecurewebproxy "Wi-fi" $proxy_host $proxy_port
-		#networksetup -setautoproxyurl "Wi-fi" $pac_url
+		networksetup -setautoproxyurl "Wi-fi" $pac_url
 	fi
 }
 
 unproxy(){
-	for envar in $PROXY_ENV
-	do
+	for envar in $PROXY_ENV; do
 		unset $envar
 	done
-	#sed -i.bak -e '/^ProxyCommand/ s/^#*/#/' ~/.ssh/config
 	if [[ "$OSTYPE" = darwin* ]]; then
 		networksetup -setsecurewebproxystate "Wi-fi" off
 		networksetup -setwebproxystate "Wi-fi" off
