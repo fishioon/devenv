@@ -10,3 +10,5 @@ export NODE_PATH="/usr/local/lib/node_modules"
 export REDISCLI_HISTFILE=/dev/null
 export NODE_REPL_HISTORY=""
 export EDITOR=nvim
+export http_proxy="http://127.0.0.1:12639"
+export https_proxy="http://127.0.0.1:12639"

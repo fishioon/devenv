@@ -39,23 +39,12 @@ setproxy(){
 	for envar in $PROXY_ENV; do
 		export $envar="http://$proxy_host:$proxy_port"
 	done
-
-	if [[ "$OSTYPE" = darwin* ]]; then
-		networksetup -setwebproxy "Wi-fi" $proxy_host $proxy_port
-		networksetup -setsecurewebproxy "Wi-fi" $proxy_host $proxy_port
-		networksetup -setautoproxyurl "Wi-fi" $pac_url
-	fi
 }
 
 unproxy(){
 	for envar in $PROXY_ENV; do
 		unset $envar
 	done
-	if [[ "$OSTYPE" = darwin* ]]; then
-		networksetup -setsecurewebproxystate "Wi-fi" off
-		networksetup -setwebproxystate "Wi-fi" off
-		networksetup -setautoproxystate "Wi-fi" off
-	fi
 }
 
 http() {
