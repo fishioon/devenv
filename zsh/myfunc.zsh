@@ -1,7 +1,7 @@
 # function
 v() {
 	if [[ -S "$NVIM_LISTEN_ADDRESS" ]]; then
-		NVIM_NODE_LOG_LEVEL=info nv "$@"
+		nv "$@"
 	else
 		if [[ -z "$1" ]]; then
 			nvim -c ":terminal"

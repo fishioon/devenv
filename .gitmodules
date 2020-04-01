@@ -14,3 +14,6 @@
 [submodule "nvim/pack/github/start/markdown-preview.nvim"]
 	path = nvim/pack/github/start/markdown-preview.nvim
 	url = git@github.com:iamcco/markdown-preview.nvim.git
+[submodule "zsh/z"]
+	path = zsh/z
+	url = git@github.com:fishioon/z.git
