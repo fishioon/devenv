@@ -8,6 +8,7 @@ alias gd='git diff'
 alias gp='git push'
 alias gst='git status'
 alias vi=nvim
+alias m=tldr
 alias sshconfig='v ~/.ssh/config'
 alias zshconfig="v $ZDOTDIR/.zshrc"
 

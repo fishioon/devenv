@@ -12,6 +12,8 @@ export NVIM_NODE_LOG_LEVEL=info
 export EDITOR=nvim
 export http_proxy="http://127.0.0.1:12639"
 export https_proxy="http://127.0.0.1:12639"
+export HTTP_PROXY="http://127.0.0.1:12639"
+export HTTPS_PROXY="http://127.0.0.1:12639"
 
 source $ZDOTDIR/func.zsh
 source $ZDOTDIR/alias.sh
