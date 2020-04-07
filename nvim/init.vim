@@ -6,6 +6,24 @@ set ignorecase
 
 nnoremap <silent> <C-l> :nohlsearch<CR>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
+nnoremap <silent> <space>1 1gt
+nnoremap <silent> <space>2 2gt
+nnoremap <silent> <space>3 3gt
+nnoremap <silent> <space>4 4gt
+
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
 "autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
 command! -nargs=* T belowright split | resize 16 | terminal <args>
