@@ -1,6 +1,4 @@
 {
-	"java.format.settings.url": "https://raw.githubusercontent.com/alibaba/p3c/master/p3c-formatter/eclipse-codestyle.xml",
-	"java.jdt.ls.vmargs": "-javaagent:/Users/fish/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar -Xbootclasspath/a:/Users/fish/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar",
 	"yank.highlight.enable": false,
 	"list.maxHeight": 18,
 	"list.autoResize": false,

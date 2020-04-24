@@ -30,7 +30,7 @@ command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 
 "========= coc
-let g:coc_global_extensions = ['coc-snippets','coc-lists','coc-yank','coc-git', 'coc-json', 'coc-tsserver', 'coc-pairs', 'coc-java']
+let g:coc_global_extensions = ['coc-snippets', 'coc-lists', 'coc-yank', 'coc-git', 'coc-json', 'coc-tsserver', 'coc-pairs']
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 nnoremap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>
@@ -50,3 +50,23 @@ nnoremap <silent> <space>l :CocList files<CR>
 nnoremap <silent> <space>y :CocList -A --normal yank<cr>
 nnoremap <silent> <space>g :exe 'CocList --auto-preview grep '.expand('<cword>')<CR>
 nnoremap <silent> <space>w :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
+
+"========= statusline
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [
+  \     [ 'cocstatus', 'readonly', 'filename', 'method' ]
+  \   ],
+  \   'right':[
+  \     [ 'gitstatus', 'filetype', 'fileencoding', 'lineinfo', 'percent' ]
+  \   ],
+  \ },
+  \ 'component_function': {
+  \   'cocstatus': 'coc#status',
+  \   'gitstatus': 'LightlineGitStatus',
+  \ }
+\ }
+function! LightlineGitStatus() abort
+  return get(g:, 'coc_git_status', '')
+endfunction

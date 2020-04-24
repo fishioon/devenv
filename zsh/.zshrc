@@ -1,5 +1,3 @@
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
-
 export ZSH=$ZDOTDIR/oh-my-zsh
 ZSH_THEME="robbyrussell"
 plugins=(docker)
@@ -9,3 +7,5 @@ bindkey '^o' autosuggest-execute
 
 _Z_DATA=$XDG_CONFIG_HOME/z
 . $ZDOTDIR/z/z.sh
+
+[ -d "/usr/local/opt/fzf/" ] && source "/usr/local/opt/fzf/shell/key-bindings.zsh"

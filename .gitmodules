@@ -17,3 +17,6 @@
 [submodule "zsh/z"]
 	path = zsh/z
 	url = git@github.com:fishioon/z.git
+[submodule "nvim/pack/github/start/lightline"]
+	path = nvim/pack/github/start/lightline
+	url = https://github.com/itchyny/lightline.vim
