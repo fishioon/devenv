@@ -40,7 +40,7 @@ http() {
 }
 
 proxy() {
-	PROXY_ENV=(http_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY)
+	PROXY_ENV="http_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY"
 	for envar in $PROXY_ENV; do
 		if [[ -z "$1" ]]; then
 			unset $envar
