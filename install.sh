@@ -1,8 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-
-ln -sf "$PWD/zsh/.zshenv" $HOME/
-source $HOME/.zshenv
+export XDG_CONFIG_HOME=$HOME/.config
 
 [ ! -d "$XDG_CONFIG_HOME" ] && mkdir -p $XDG_CONFIG_HOME
 
@@ -13,5 +11,8 @@ done
 
 ## fzf
 # command -v fzf || (brew install fzf && $(brew --prefix)/opt/fzf/install --xdg --no-bash --no-fish --no-update-rc --key-bindings --completion)
+
+ln -sf "$PWD/zsh/.zshenv" $HOME/
+source $HOME/.zshenv
 
 echo "🎉 🎉 Good luck"
