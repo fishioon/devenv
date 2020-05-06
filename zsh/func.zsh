@@ -39,17 +39,6 @@ http() {
 	goexec 'http.ListenAndServe(`'$host'`, http.FileServer(http.Dir(`'$dir'`)))'
 }
 
-proxy() {
-	PROXY_ENV="http_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY"
-	for envar in $PROXY_ENV; do
-		if [[ -z "$1" ]]; then
-			unset $envar
-		else
-			export $envar=$1
-		fi
-	done
-}
-
 known_hosts() {
 	line=$1
 	sed -i .bak "${line}d" $HOME/.ssh/known_hosts
