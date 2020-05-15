@@ -69,6 +69,7 @@ source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^o' autosuggest-execute
 
-_Z_DATA=$XDG_CONFIG_HOME/z source $ZDOTDIR/z/z.sh
+_Z_DATA=$XDG_CONFIG_HOME/z 
+. $ZDOTDIR/z/z.sh
 
 [ -d "/usr/local/opt/fzf/" ] && source "/usr/local/opt/fzf/shell/key-bindings.zsh"
