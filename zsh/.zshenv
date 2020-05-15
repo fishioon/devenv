@@ -10,7 +10,5 @@ export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export NODE_REPL_HISTORY=""
 export EDITOR=nvim
 
-source $ZDOTDIR/func.zsh
-source $ZDOTDIR/alias.sh
 export proxy_address="http://127.0.0.1:12639"
 export {http_proxy,https_proxy}=$proxy_address

@@ -3,6 +3,8 @@ set number
 set cmdwinheight=18
 set smartcase
 set ignorecase
+set foldmethod=indent
+set foldlevel=8
 
 nnoremap <silent> <C-l> :nohlsearch<CR>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
@@ -24,7 +26,7 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-"autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=2 sw=2 sts=2 expandtab
 
 command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
