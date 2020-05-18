@@ -8,10 +8,6 @@ set foldlevel=8
 
 nnoremap <silent> <C-l> :nohlsearch<CR>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
-nnoremap <silent> <space>1 1gt
-nnoremap <silent> <space>2 2gt
-nnoremap <silent> <space>3 3gt
-nnoremap <silent> <space>4 4gt
 
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
@@ -35,40 +31,44 @@ command! -nargs=* VT vsplit | terminal <args>
 let g:coc_global_extensions = ['coc-snippets', 'coc-lists', 'coc-yank', 'coc-git', 'coc-json', 'coc-tsserver', 'coc-pairs']
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
-nnoremap <silent> [c :call CocActionAsync('diagnosticPrevious')<CR>
-nnoremap <silent> ]c :call CocActionAsync('diagnosticNext')<CR>
-nnoremap <silent> <space>j :call CocAction('jumpDefinition')<CR>
-nnoremap <silent> <space>i :call CocAction('jumpImplementation')<CR>
-nnoremap <silent> <space>f :call CocAction('jumpReferences')<CR>
-nnoremap <silent> <space>k :call CocAction('format')<CR>
-nnoremap <silent> <space>h :call CocAction('doHover')<CR>
-nnoremap <silent> <space>ei :call CocActionAsync('runCommand', 'editor.action.organizeImport')<CR>
-nnoremap <silent> <space>er :call CocActionAsync('rename')<CR>
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+nnoremap <silent> <space>rn :call CocActionAsync('rename')<CR>
+nnoremap <silent> <space>m :call CocAction('format')<CR>
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Mappings using CoCList:
+nnoremap <silent> <space>b  :<C-u>CocList buffers<CR>
+nnoremap <silent> <space>l  :<C-u>CocList files<CR>
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 nnoremap <space>/ :CocList --auto-preview grep<space>
-nnoremap <silent> <space>a :CocList diagnostics<CR>
-nnoremap <silent> <space>b :CocList buffers<CR>
-nnoremap <silent> <space>l :CocList files<CR>
-nnoremap <silent> <space>y :CocList -A --normal yank<cr>
 nnoremap <silent> <space>g :exe 'CocList --auto-preview grep '.expand('<cword>')<CR>
 nnoremap <silent> <space>w :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
-
-"========= statusline
-let g:lightline = {
-  \ 'colorscheme': 'wombat',
-  \ 'active': {
-  \   'left': [
-  \     [ 'cocstatus', 'readonly', 'filename', 'method' ]
-  \   ],
-  \   'right':[
-  \     [ 'gitstatus', 'filetype', 'fileencoding', 'lineinfo', 'percent' ]
-  \   ],
-  \ },
-  \ 'component_function': {
-  \   'cocstatus': 'coc#status',
-  \   'gitstatus': 'LightlineGitStatus',
-  \ }
-\ }
-function! LightlineGitStatus() abort
-  return get(g:, 'coc_git_status', '')
-endfunction
