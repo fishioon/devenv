@@ -20,3 +20,6 @@
 [submodule "nvim/pack/github/start/lightline"]
 	path = nvim/pack/github/start/lightline
 	url = https://github.com/itchyny/lightline.vim
+[submodule "zsh/pure"]
+	path = zsh/pure
+	url = https://github.com/sindresorhus/pure.git

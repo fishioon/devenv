@@ -1,19 +1,4 @@
-### alias
-alias ga='git add'
-alias gc='git commit -v'
-alias gcm='git checkout master'
-alias gcd='git checkout develop'
-alias gcb='git checkout -b'
-alias gco='git checkout'
-alias gd='git diff'
-alias gp='git push'
-alias gst='git status'
-alias vi=nvim
-alias m=tldr
-alias sshconfig='nvim ~/.ssh/config'
-alias zshconfig='nvim ~/.config/zsh/.zshrc'
-
-# function
+###### function
 v() {
 	if [[ -S "$NVIM_LISTEN_ADDRESS" ]]; then
 		$DEVENV/bin/nv "$@"
@@ -60,16 +45,34 @@ known_hosts() {
 }
 
 ###########
+fpath=($ZDOTDIR/pure $fpath)
+autoload -Uz compinit && compinit
 
-export ZSH=$ZDOTDIR/oh-my-zsh
-ZSH_THEME="robbyrussell"
-plugins=(docker)
-source $ZSH/oh-my-zsh.sh
-
+source $ZDOTDIR/pure/pure.zsh
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^o' autosuggest-execute
 
-_Z_DATA=$XDG_CONFIG_HOME/z 
+_Z_DATA=$XDG_CONFIG_HOME/z
 . $ZDOTDIR/z/z.sh
 
 [ -d "/usr/local/opt/fzf/" ] && source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+### bindkey
+bindkey -e
+bindkey '^o' autosuggest-execute
+
+### alias
+alias l='ls -lah'
+alias ll='ls -lh'
+alias ga='git add'
+alias gc='git commit -v'
+alias gcm='git checkout master'
+alias gcd='git checkout develop'
+alias gcb='git checkout -b'
+alias gco='git checkout'
+alias gd='git diff'
+alias gp='git push'
+alias gst='git status'
+alias vi=nvim
+alias m=tldr
+alias sshconfig='nvim ~/.ssh/config'
+alias zshconfig='nvim ~/.config/zsh/.zshrc'

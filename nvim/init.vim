@@ -23,6 +23,7 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 autocmd FileType javascript setlocal ts=2 sw=2 sts=2 expandtab
+autocmd FileType typescipt setlocal ts=2 sw=2 sts=2 expandtab
 
 command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>

@@ -1,9 +1,9 @@
 # devenv
 ## prepare
+git  
 golang
 neovim  
 node  
-git  
 zsh  
 
 ## install
@@ -14,7 +14,8 @@ bash install.sh
 # restart terminal
 ```
 
-## action
-nvim  
-oh-my-zsh  
-zsh-autosuggests  
+## config
+### screen
+```
+hardstatus string "[screen %n%?: %t%?] %h"
+```
