@@ -6,6 +6,7 @@ set ignorecase
 set foldmethod=indent
 set foldlevel=8
 
+nnoremap <silent> <space>1 1gt
 nnoremap <silent> <C-l> :nohlsearch<CR>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
 
