@@ -5,3 +5,5 @@
 [includeIf "gitdir:~/code/work/"]
 	path = ~/code/work/.gitconfig-work
 
+[alias]
+	root = rev-parse --show-toplevel
