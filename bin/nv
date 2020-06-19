@@ -6,11 +6,11 @@ const attach = require('neovim').attach
 const path = require('path');
 
 (async function () {
-	const nvim = await attach({socket: process.env.NVIM_LISTEN_ADDRESS})
-	let name = process.argv[2]
-	if (name && !path.isAbsolute(name)) {
-		name = process.cwd() + '/' + name
-	}
-	await nvim.command(name ? 'tabedit ' + name : 'tabnext')
-	process.exit()
+  const nvim = await attach({socket: process.env.NVIM_LISTEN_ADDRESS})
+  let name = process.argv[2]
+  if (name && !path.isAbsolute(name)) {
+    name = process.cwd() + '/' + name
+  }
+  await nvim.command(name ? 'tabedit ' + name : 'tabnext')
+  process.exit()
 })()
