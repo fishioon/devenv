@@ -21,9 +21,9 @@ gitignore() {
 }
 
 rs() {
-	repo=$1
-	hostname=${2:-dev}
-	rsync --rsh=ssh -avz --exclude='.git' ~/code/work/$repo $hostname:/data/fish/
+	repo=$(git root)
+	hostname=${1:-dev}
+	rsync --rsh=ssh -avz --exclude='.git' $repo $hostname:/data/ifish/
 }
 
 cpath() {
@@ -44,21 +44,23 @@ known_hosts() {
 	sed -i .bak "${line}d" $HOME/.ssh/known_hosts
 }
 
+ssp() {
+	ssh -o "ProxyCommand corkscrew $proxy_hostname $proxy_port %h %p" $@
+}
+
 ###########
 fpath=($ZDOTDIR/pure $fpath)
 autoload -Uz compinit && compinit
+bindkey -e
 
 source $ZDOTDIR/pure/pure.zsh
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-_Z_DATA=$XDG_CONFIG_HOME/z
-. $ZDOTDIR/z/z.sh
-
-[ -d "/usr/local/opt/fzf/" ] && source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-
-### bindkey
-bindkey -e
 bindkey '^o' autosuggest-execute
+
+export _Z_DATA=$XDG_CONFIG_HOME/z
+source $ZDOTDIR/z/z.sh
+
+source /usr/local/opt/fzf/shell/key-bindings.zsh
 
 ### alias
 alias l='ls -lah'
