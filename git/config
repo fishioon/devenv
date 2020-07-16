@@ -2,8 +2,8 @@
 	name = fish
 	email = fishioon@live.com
 
-[includeIf "gitdir:~/code/work/"]
-	path = ~/code/work/.gitconfig-work
+[includeIf "gitdir:~/go/src/work/"]
+	path = ~/go/src/work/.gitconfig-work
 
 [alias]
 	root = rev-parse --show-toplevel
