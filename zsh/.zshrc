@@ -20,23 +20,18 @@ gitignore() {
 	fi
 }
 
+# rsync current git repo to dst server
 rs() {
 	repo=$(git root)
 	hostname=${1:-dev}
 	rsync --rsh=ssh -avz --exclude='.git' $repo $hostname:/data/ifish/
 }
 
-cpath() {
-	name=`pwd`/$1
+## copy full name of file or dir
+cn() {
+	name=$(realpath $1)
 	printf $name | pbcopy
 	echo $name
-}
-
-http() {
-	host=${1:-'127.0.0.1:9981'}
-	dir=${2:-$PWD}
-	echo 'http://'$host $dir
-	goexec 'http.ListenAndServe(`'$host'`, http.FileServer(http.Dir(`'$dir'`)))'
 }
 
 known_hosts() {
