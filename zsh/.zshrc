@@ -45,7 +45,7 @@ ssp() {
 
 ###########
 eval "$(starship init zsh)"
-#autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit
 bindkey -e
 
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
