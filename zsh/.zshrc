@@ -44,11 +44,10 @@ ssp() {
 }
 
 ###########
-fpath=($ZDOTDIR/pure $fpath)
-autoload -Uz compinit && compinit
+eval "$(starship init zsh)"
+#autoload -Uz compinit && compinit
 bindkey -e
 
-source $ZDOTDIR/pure/pure.zsh
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^o' autosuggest-execute
 
