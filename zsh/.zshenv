@@ -1,7 +1,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export DEVENV="$XDG_CONFIG_HOME/devenv"
-export PATH="$DEVENV/bin:$HOME/go/bin:$PATH"
+export PATH="$DEVENV/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 
 export CLICOLOR=1

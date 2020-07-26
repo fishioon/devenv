@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+process.env.NVIM_NODE_LOG_FILE='/dev/null'
 // npm install -g neovim
 // export NODE_PATH=$(npm root --quiet -g)
 const attach = require('neovim').attach
