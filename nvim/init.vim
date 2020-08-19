@@ -23,8 +23,7 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-autocmd FileType javascript setlocal ts=2 sw=2 sts=2 expandtab
-autocmd FileType typescipt setlocal ts=2 sw=2 sts=2 expandtab
+autocmd FileType javascript,typescipt setlocal ts=2 sw=2 sts=2 expandtab
 autocmd BufRead,BufNewFile * if getline(1) =~ '^[' || getline(1) =~ '^{' | setfiletype json | endif
 
 command! -nargs=* T belowright split | resize 16 | terminal <args>
