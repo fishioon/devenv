@@ -10,10 +10,10 @@
 	url = https://github.com/honza/vim-snippets.git
 [submodule "nvim/pack/github/start/markdown-preview.nvim"]
 	path = nvim/pack/github/start/markdown-preview.nvim
-	url = git@github.com:iamcco/markdown-preview.nvim.git
+	url = https://github.com/iamcco/markdown-preview.nvim.git
 [submodule "zsh/z"]
 	path = zsh/z
-	url = git@github.com:fishioon/z.git
+	url = https://github.com/fishioon/z.git
 [submodule "nvim/pack/github/start/lightline"]
 	path = nvim/pack/github/start/lightline
 	url = https://github.com/itchyny/lightline.vim
