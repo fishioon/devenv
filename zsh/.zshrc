@@ -56,6 +56,9 @@ source $ZDOTDIR/z/z.sh
 
 source /usr/local/opt/fzf/shell/key-bindings.zsh
 
+setopt inc_append_history
+setopt share_history
+
 ### alias
 alias l='ls -lah'
 alias ll='ls -lh'
