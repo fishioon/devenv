@@ -5,6 +5,7 @@ set smartcase
 set ignorecase
 set foldmethod=indent
 set foldlevel=8
+set colorcolumn=120
 
 nnoremap <silent> <space>1 1gt
 nnoremap <silent> <C-l> :nohlsearch<CR>
@@ -30,7 +31,7 @@ command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 
 "========= coc
-let g:coc_global_extensions = ['coc-snippets', 'coc-lists', 'coc-yank', 'coc-git', 'coc-json', 'coc-tsserver', 'coc-pairs']
+let g:coc_global_extensions = ['coc-snippets', 'coc-lists', 'coc-yank', 'coc-git', 'coc-json', 'coc-tsserver', 'coc-pairs', 'coc-yaml']
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
@@ -47,11 +48,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
 endfunction
 
 nnoremap <silent> <space>rn :call CocActionAsync('rename')<CR>
