@@ -72,6 +72,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-nnoremap <space>/ :CocList --auto-preview grep<space>
+nnoremap <space>/ :CocList --auto-preview grep -S<space>
 nnoremap <silent> <space>g :exe 'CocList --auto-preview grep '.expand('<cword>')<CR>
 nnoremap <silent> <space>w :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
