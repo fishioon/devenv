@@ -10,6 +10,7 @@ set colorcolumn=120
 nnoremap <silent> <space>1 1gt
 nnoremap <silent> <C-l> :nohlsearch<CR>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
+vnoremap <silent> <space>y "+y
 
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
@@ -25,7 +26,7 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 autocmd FileType javascript,typescipt setlocal ts=2 sw=2 sts=2 expandtab
-autocmd BufRead,BufNewFile * if getline(1) =~ '^[' || getline(1) =~ '^{' | setfiletype json | endif
+autocmd BufRead,BufNewFile * if getline(1) =~ '^{' | setfiletype json | endif
 
 command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
@@ -61,15 +62,16 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Mappings using CoCList:
+nnoremap <silent> <space>l  :<C-u>CocList<CR>
 nnoremap <silent> <space>b  :<C-u>CocList buffers<CR>
-nnoremap <silent> <space>l  :<C-u>CocList files<CR>
+nnoremap <silent> <space>f  :<C-u>CocList files<CR>
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+"nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+"nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+"nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+"nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+"nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 nnoremap <space>/ :CocList --auto-preview grep -S<space>

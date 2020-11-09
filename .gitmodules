@@ -1,6 +1,9 @@
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/z"]
+	path = zsh/z
+	url = https://github.com/rupa/z.git
 [submodule "nvim/pack/github/start/coc.nvim"]
 	path = nvim/pack/github/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
@@ -8,12 +11,3 @@
 [submodule "nvim/pack/github/start/vim-snippets"]
 	path = nvim/pack/github/start/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "nvim/pack/github/start/markdown-preview.nvim"]
-	path = nvim/pack/github/start/markdown-preview.nvim
-	url = https://github.com/iamcco/markdown-preview.nvim.git
-[submodule "zsh/z"]
-	path = zsh/z
-	url = https://github.com/fishioon/z.git
-[submodule "nvim/pack/github/start/lightline"]
-	path = nvim/pack/github/start/lightline
-	url = https://github.com/itchyny/lightline.vim
