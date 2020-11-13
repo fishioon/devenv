@@ -1,4 +1,5 @@
 {
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
 	"yank.highlight.enable": false,
 	"list.height": 18,
 	"list.normalMappings": {

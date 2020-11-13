@@ -7,3 +7,5 @@
 
 [alias]
 	root = rev-parse --show-toplevel
+[credential]
+	helper = osxkeychain
