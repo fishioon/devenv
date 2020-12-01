@@ -2,3 +2,4 @@
 .zcompdump*
 nvim/.netrwhist
 zsh/.zcompcache/
+zsh/.zsh_sessions/

@@ -28,7 +28,7 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
-autocmd FileType javascript,typescipt setlocal ts=2 sw=2 sts=2 expandtab
+autocmd FileType c,c++,javascript,typescipt setlocal ts=2 sw=2 sts=2 expandtab
 autocmd BufRead,BufNewFile * if getline(1) =~ '^{' | setfiletype json | endif
 
 command! -nargs=* T belowright split | resize 16 | terminal <args>
