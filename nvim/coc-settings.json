@@ -1,4 +1,5 @@
 {
+	"session.directory": "~/.cache/nvim/sessions",
 	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
 	"yank.highlight.enable": false,
 	"list.height": 18,
