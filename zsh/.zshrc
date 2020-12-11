@@ -43,7 +43,6 @@ proxy() {
 	switch=${1:-off}
 	sudo networksetup -setwebproxystate "Wi-Fi" $switch
 	sudo networksetup -setsecurewebproxystate "Wi-Fi" $switch
-	sudo networksetup -setautoproxystate "Wi-Fi" $switch
 }
 
 ssh2https() {
@@ -51,7 +50,7 @@ ssh2https() {
 }
 
 ### proxy
-export no_proxy="127.0.0.1,localhost,.oa.com,.woa.com,.tencent.com"
+export no_proxy="127.0.0.1,localhost,.oa.com,.woa.com,.tencent.com,10.0.0.0/8,9.0.0.0/8"
 export http_proxy=`scutil --proxy | awk '\
   /HTTPEnable/ { enabled = $3; } \
   /HTTPProxy/ { server = $3; } \
@@ -59,7 +58,6 @@ export http_proxy=`scutil --proxy | awk '\
   END { if (enabled == "1") { print "http://" server ":" port; } }'`
 export {https_proxy,HTTP_PROXY,HTTPS_PROXY}=$http_proxy
 export NO_PROXY=$no_proxy
-
 
 ###########
 eval "$(starship init zsh)"

@@ -35,7 +35,7 @@ command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 
 "========= coc
-let g:coc_global_extensions = ['coc-snippets', 'coc-lists', 'coc-yank', 'coc-eslint', 'coc-git', 'coc-tsserver', 'coc-pairs']
+let g:coc_global_extensions = ['coc-snippets', 'coc-lists', 'coc-yank', 'coc-eslint', 'coc-git', 'coc-tsserver']
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
