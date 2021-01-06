@@ -10,6 +10,7 @@ set colorcolumn=120
 nnoremap <silent> <space>1 1gt
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <silent> <space>d :lcd %:p:h<CR>
+command! -nargs=? Gcd silent! execute 'cd %:h | lcd `git root`'
 
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
@@ -35,7 +36,7 @@ command! -nargs=* T belowright split | resize 16 | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 
 "========= coc
-let g:coc_global_extensions = ['coc-snippets', 'coc-lists', 'coc-yank', 'coc-eslint', 'coc-git', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-snippets', 'coc-lists', 'coc-yank', 'coc-eslint', 'coc-git', 'coc-tsserver', 'coc-pairs']
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 

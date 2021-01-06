@@ -50,14 +50,14 @@ ssh2https() {
 }
 
 ### proxy
-export no_proxy="127.0.0.1,localhost,.oa.com,.woa.com,.tencent.com,10.0.0.0/8,9.0.0.0/8"
-export http_proxy=`scutil --proxy | awk '\
-  /HTTPEnable/ { enabled = $3; } \
-  /HTTPProxy/ { server = $3; } \
-  /HTTPPort/ { port = $3; } \
-  END { if (enabled == "1") { print "http://" server ":" port; } }'`
-export {https_proxy,HTTP_PROXY,HTTPS_PROXY}=$http_proxy
-export NO_PROXY=$no_proxy
+#export no_proxy=".paas.com,127.0.0.1,localhost,.oa.com,.woa.com,.tencent.com,10.0.0.0/8,9.0.0.0/8"
+#export http_proxy=`scutil --proxy | awk '\
+#  /HTTPEnable/ { enabled = $3; } \
+#  /HTTPProxy/ { server = $3; } \
+#  /HTTPPort/ { port = $3; } \
+#  END { if (enabled == "1") { print "http://" server ":" port; } }'`
+#export {https_proxy,HTTP_PROXY,HTTPS_PROXY}=$http_proxy
+#export NO_PROXY=$no_proxy
 
 ###########
 eval "$(starship init zsh)"
