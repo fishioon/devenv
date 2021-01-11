@@ -9,8 +9,9 @@ set colorcolumn=120
 
 nnoremap <silent> <space>1 1gt
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-nnoremap <silent> <space>d :lcd %:p:h<CR>
 command! -nargs=? Gcd silent! execute 'cd %:h | lcd `git root`'
+nnoremap <silent> <space>d :Gcd<CR>
+"nnoremap <silent> <space>d :lcd %:p:h<CR>
 
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
@@ -59,19 +60,19 @@ endfunction
 
 nnoremap <silent> <space>rn :call CocActionAsync('rename')<CR>
 nnoremap <silent> <space>m :call CocAction('format')<CR>
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Mappings using CoCList:
-nnoremap <silent> <space>j   :<C-u>CocNext<CR>
-nnoremap <silent> <space>k   :<C-u>CocPrev<CR>
-nnoremap <silent> <space>b   :<C-u>CocList buffers<CR>
-nnoremap <silent> <space>f   :<C-u>CocList files<CR>
-nnoremap <silent> <space>p   :<C-u>CocListResume<CR>
-nnoremap <silent> <space>ls  :<C-u>CocList<CR>
-nnoremap <silent> <space>lc  :<C-u>CocList commands<cr>
-nnoremap <silent> <space>la  :<C-u>CocList diagnostics<cr>
-nnoremap <silent> <space>lm  :<C-u>CocList marks<cr>
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent> <space>b  :<C-u>CocList buffers<CR>
+nnoremap <silent> <space>f  :<C-u>CocList files<CR>
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent> <space>ls :<C-u>CocList<CR>
+nnoremap <silent> <space>lc :<C-u>CocList commands<cr>
+nnoremap <silent> <space>la :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>lm :<C-u>CocList marks<cr>
 
 nnoremap <space>/ :CocList --auto-preview grep -S<space>
 nnoremap <silent> <space>g :exe 'CocList --auto-preview grep '.expand('<cword>')<CR>
