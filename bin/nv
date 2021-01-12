@@ -12,6 +12,7 @@ const path = require('path');
   if (name && !path.isAbsolute(name)) {
     name = process.cwd() + '/' + name
   }
-  await nvim.command(name ? 'tabedit ' + name : 'tabnext')
+  // tabedit and cd git root
+  await nvim.command(name ? 'tabedit ' + name +'| Gcd' : 'tabnext')
   process.exit()
 })()

@@ -5,7 +5,7 @@ set smartcase
 set ignorecase
 set foldmethod=indent
 set foldlevel=8
-set colorcolumn=120
+"set colorcolumn=120
 
 nnoremap <silent> <space>1 1gt
 nnoremap <silent> <C-l> :nohl<CR><C-l>
