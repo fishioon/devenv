@@ -5,6 +5,7 @@ set smartcase
 set ignorecase
 set foldmethod=indent
 set foldlevel=8
+set scrollback=100000
 "set colorcolumn=120
 
 nnoremap <silent> <space>1 1gt

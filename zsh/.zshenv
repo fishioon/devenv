@@ -13,3 +13,19 @@ export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export NODE_REPL_HISTORY=""
 export EDITOR=nvim
 
+### alias
+alias l='ls -lah'
+alias ll='ls -lh'
+alias ga='git add'
+alias gc='git commit -v'
+alias gcm='git checkout master'
+alias gcd='git checkout develop'
+alias gcb='git checkout -b'
+alias gco='git checkout'
+alias gd='git diff'
+alias gp='git push'
+alias gst='git status'
+alias vi=nvim
+alias m=tldr
+alias sshconfig='nvim ~/.ssh/config'
+alias zshconfig='nvim ~/.config/zsh/.zshrc'
