@@ -27,7 +27,10 @@ rs() {
 	rsync --rsh=ssh -avz --exclude='.git' $repo $hostname:/data/ifish/
 }
 
-## copy full name of file or dir
+realpath() {
+	[[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
 cn() {
 	name=$(realpath $1)
 	printf $name | pbcopy
